@@ -39,6 +39,7 @@
     "release:preflight": "irish-pub",
     "release:preflight:package": "npm pack",
     "size": "shx echo \"Gzipped Size:\" && cross-var strip-json-comments --no-whitespace $npm_package_main | gzip-size",
+    "coveralls": "npm run test:coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "serve": "http-server"
   },
   "config": {
@@ -87,7 +88,9 @@
       }
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "coveralls": "2.13.1"
+  },
   "devDependencies": {
     "@types/jest": "20.0.2",
     "@types/node": "7.0.31",
