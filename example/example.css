@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+
+html, body {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fafafa;
+  align-items: center;
+  align-content: center;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .005em;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  justify-content: center;
+}
+
+.flex, .row, .col {
+  display: flex;
+  flex: auto;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.row--reverse {
+  flex-direction: row-reverse;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.col--reverse {
+  flex-direction: column-reverse;
+}
+
+.card {
+  margin: 8px;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  flex-direction: column;
+}
+
+.card__header {
+  padding: 16px;
+}
+
+.card__footer {
+  padding: 16px;
+  text-transform: uppercase;
+}
+
+.header {
+  font-weight: 500;
+}
+
+.subheader {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 24px;
+}
+
+.metric {
+  background-color: #fafafa;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 32px;
+}
+
+.metric__label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.metric__value {
+  opacity: 0.84;
+  font-weight: 400;
+  font-size: 300%;
+  line-height: 1.5em;
+  letter-spacing: -.01em;
+}
+
+.metric--large .metric__value {
+  font-size: 500%;
+}
+
+.metric--up .metric__label {
+  border-bottom: #8BC34A;
+}
+
+.metric--down .metric__label {
+  border-bottom: #F44336;
+}
+
+/*# sourceMappingURL=style.css.map */

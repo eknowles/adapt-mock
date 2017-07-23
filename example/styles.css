@@ -1,0 +1,45 @@
+.live-mock-meta, [data-stage]::before, [data-stage]::after {
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  line-height: 1.2em;
+  font-family: sans-serif;
+  padding: 8px 16px; }
+
+[data-stage] * {
+  transition: all .3s; }
+[data-stage]::before {
+  content: "Mocker Loaded (Stage " attr(data-stage) "/" attr(data-stages) ")";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-bottom-right-radius: 8px;
+  font-weight: bold; }
+[data-stage]::after {
+  content: attr(data-stage-description);
+  position: absolute;
+  left: 0;
+  top: 33px;
+  max-width: 200px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px; }
+
+.adapt-1 .metric__label {
+  font-size: 1rem; }
+.adapt-1 .metric__value {
+  letter-spacing: -.03em;
+  font-weight: 300; }
+
+.adapt-2 .metric {
+  align-items: center;
+  flex-direction: column-reverse; }
+.adapt-2 .metrics {
+  flex-direction: column; }
+  .adapt-2 .metrics > div.col {
+    flex-direction: row; }
+
+.adapt-3 .metric {
+  background-color: #05557d;
+  color: #FFFFFF; }
+
+/*# sourceMappingURL=styles.css.map */

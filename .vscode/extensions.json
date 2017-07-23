@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "eg2.tslint",
+    "esbenp.prettier-vscode",
+    "codezombiech.gitignore",
+    "EditorConfig.EditorConfig"
+  ]
+}

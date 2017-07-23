@@ -1,0 +1,70 @@
+$adapt-className: 'adapt-';
+
+// Adapt UI
+.live-mock-meta {
+  color: #FFFFFF;
+  background: rgba(black, .8);
+  font-size: 14px;
+  line-height: 1.2em;
+  font-family: sans-serif;
+  padding: 8px 16px;
+}
+
+[data-stage] {
+  * {
+    transition: all .3s; // Set animations here
+  }
+  &::before {
+    @extend .live-mock-meta;
+    content: 'Mocker Loaded (Stage ' attr(data-stage) '/' attr(data-stages) ')';
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-bottom-right-radius: 8px;
+    font-weight: bold;
+  }
+  &::after {
+    @extend .live-mock-meta;
+    content: attr(data-stage-description);
+    position: absolute;
+    left: 0;
+    top: 33px;
+    max-width: 200px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+// ---End Adapt UI
+
+
+.#{$adapt-className}1 {
+  .metric {
+    &__label {
+      font-size: 1rem;
+    }
+    &__value {
+      letter-spacing: -.03em;
+      font-weight: 300;
+    }
+  }
+}
+
+.#{$adapt-className}2 {
+  .metric {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .metrics {
+    > div.col {
+      flex-direction: row;
+    }
+    flex-direction: column;
+  }
+}
+
+.#{$adapt-className}3 {
+  .metric {
+    background-color: rgb(5, 85, 125);
+    color: #FFFFFF;
+  }
+}
