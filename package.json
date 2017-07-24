@@ -1,7 +1,7 @@
 {
   "name": "adapt-mock",
   "version": "0.0.3",
-  "description": "",
+  "description": "Rapid prototype existing HTML/CSS",
   "main": "umd/adapt-mock.min.js",
   "module": "lib/index.js",
   "es2015": "lib-esm/index.js",
