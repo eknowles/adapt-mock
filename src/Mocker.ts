@@ -10,6 +10,7 @@ export class Mocker {
   public nextKey = 'ArrowRight';
   public prevKey = 'ArrowLeft';
   public className = 'adapt-';
+  public state = {};
   private _stages: IStage[];
   private _active: number;
 
@@ -31,12 +32,24 @@ export class Mocker {
   }
 
   public set active(index: number) {
-    this._active = index;
-    if (this.stages[index]) {
-      this.element.className = this.classList(index);
-      this.element.dataset.stage = `${index}`;
-      this.element.dataset.stageDescription = this.stages[index].description || '';
+    const stage = this.stages[index];
+    const isBack = index < this._active;
+    const runStage = isBack ? this.stage : stage;
+
+    if (!stage) throw new Error;
+
+    this.element.className = this.classList(index);
+    this.element.dataset.stage = `${index}`;
+    this.element.dataset.stageDescription = stage.description || '';
+
+    if (runStage.hasOwnProperty('run') && runStage.run) {
+      runStage.run.forEach((fn) => {
+        if (!window[fn]) throw new Error(`Run function ${fn}() not found!`);
+        window[fn](isBack, this.state);
+      });
     }
+
+    this._active = index;
   }
 
   public get stage() {
@@ -44,7 +57,7 @@ export class Mocker {
   }
 
   public moveStage(inc: number): number | false {
-    if (inc < 0 && this.active === 0 || inc > 0 && (this.active + inc) > this.stages.length) {
+    if (inc < 0 && this.active === 0 || inc > 0 && (this.active + inc) >= this.stages.length) {
       return false;
     }
 

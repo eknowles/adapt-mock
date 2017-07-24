@@ -4,9 +4,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const {getIfUtils, removeEmpty} = require('webpack-config-utils');
 
 const packageJSON = require('./package.json');
-const packageName = normalizePackageName(packageJSON.name);
+const packageName = 'adapt';
 
-const LIB_NAME = pascalCase(packageName);
+const LIB_NAME = 'Adapt';
 const PATHS = {
   entryPoint: resolve(__dirname, 'src/index.ts'),
   umd: resolve(__dirname, 'umd'),
@@ -139,24 +139,6 @@ module.exports = config;
 
 // helpers
 
-function camelCaseToDash(myStr) {
-  return myStr.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-}
-
-function dashToCamelCase(myStr) {
-  return myStr.replace(/-([a-z])/g, g => g[1].toUpperCase());
-}
-
 function toUpperCase(myStr) {
   return `${myStr.charAt(0).toUpperCase()}${myStr.substr(1)}`;
-}
-
-function pascalCase(myStr) {
-  return toUpperCase(dashToCamelCase(myStr));
-}
-
-function normalizePackageName(rawPackageName) {
-  const scopeEnd = rawPackageName.indexOf('/') + 1;
-
-  return rawPackageName.substring(scopeEnd);
 }

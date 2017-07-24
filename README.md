@@ -66,8 +66,45 @@ Finally in your HTML insert these files into the HEAD element.
 </head>
 ```
 
-### Prototyping
+### Prototyping (styling stages)
 
-### Functions
+Adapt uses standard CSS classes when handling style changes between stages.
+When you go to the next stage Adapt adds a new class to the element, when you go back, it removes it.
 
-### Contributing
+#### Multiple Mockers
+
+To manage multiple Mockers on a document (because why not?) you can set the mockers base class name by using the `className`.
+
+```javascript
+const m = new Adapt.Mocker(myElement, myStages);
+m.className = 'myClassName';
+```
+
+Using the example above we expect that for the second stage it will set the element class attribute to `class="myClassName1 myClassName2"`.
+
+### Run Functions (DOM)
+
+When changing Stage you may want to make a radical change that can't be achieved with CSS, to do this we use *Run functions*.
+Adapt allows you to write your own functions that modify the DOM which get called when changing Stages.
+
+To add a functions to a Stage insert the name of the function in the run array.
+
+```javascript
+const stages = [
+  ...
+  {description: 'Update Text Labels', run: ['updateLabels']},
+];
+```
+
+Declare the function somewhere inside the
+```javascript
+function updateLabels(revert, state) {
+  // Use whatever JavaScript you like here (e.g. JQuery)
+}
+```
+
+Each function receives two arguments.
+
+||Param||Type||Description||
+|revert|Boolean|True if function should reverse (Stage is moving back)|
+|state|Object|An object stored inside the Mocker|

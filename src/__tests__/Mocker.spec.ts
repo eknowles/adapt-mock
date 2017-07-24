@@ -60,6 +60,11 @@ describe('Mocker', () => {
       expect(mock.active).toEqual(0);
     });
 
+    it('should throw when moving out of bounds', function() {
+      const fn = () => (mock.active = 100);
+      expect(fn).toThrowError();
+    });
+
     it('should update the element data-stage-description attribute when set', () => {
       mock.active = 1;
       expect(element.dataset.stageDescription).toEqual(stages[1].description);
@@ -73,6 +78,39 @@ describe('Mocker', () => {
     it('should update the elements className when set', () => {
       mock.active = 2;
       expect(element.className).toEqual(`${mock.className}1 ${mock.className}2`);
+    });
+
+    describe('run functions', () => {
+      let myFunction;
+
+      beforeEach(() => {
+        const testFunction1 = jest.fn();
+        const testFunction2 = jest.fn();
+
+        window.testFunction1 = testFunction1;
+        window.testFunction2 = testFunction2;
+        mock.stages = [{description: '', run: ['testFunction1']}, {description: '', run: ['testFunction2']}];
+      });
+
+      it('should run its functions', function() {
+        mock.active = 1;
+        expect(testFunction1).toHaveBeenCalledTimes(1);
+        expect(testFunction1).toHaveBeenCalledWith(false, {});
+      });
+
+      it('should throw an error when the function is not found', function() {
+        mock.stages = [{description: '', run: ['thisFunctionDoesNotExist']}];
+        const fn = () => (mock.active = 1);
+
+        expect(fn).toThrowError();
+      });
+
+      it('should set the first param to true when moving back a stage', function() {
+        mock.active = 2;
+        testFunction2.mockClear();
+        mock.moveStage(-1);
+        expect(testFunction2).toHaveBeenCalledWith(true, {});
+      });
     });
   });
 
