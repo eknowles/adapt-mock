@@ -10,11 +10,11 @@
 
 Rapid prototype existing HTML/CSS with the tools you already know. Adapt is a tool to bridge the gap between design and dev, if you can hack css in chrome dev tools you can build a prototype with Adapt.
 
-Adapt allows you to step through the various stages when prototyping to help sell and idea, radical change or new feature.
+Adapt allows you to step through the various stages when prototyping to help sell and ideas, radical changes or introducing new features.
 
 ## Tutorial
 
-You need some HTML/CSS to start with. Either build, extract this yourself, or just open up the webpage you want to modify and 'Save As' in your browser, this will download all the HTML and CSS you need.
+You need some HTML/CSS to start with. You can build it yourself or export from a live browser.
 
 ### Concept
 
@@ -73,14 +73,14 @@ When you go to the next stage Adapt adds a new class to the element, when you go
 
 #### Multiple Mockers
 
-To manage multiple Mockers on a document (because why not?) you can set the mockers base class name by using the `className`.
+To manage multiple Mockers on a document (because why not?) you can set the mockers base class name by using the `className` property.
 
 ```javascript
 const m = new Adapt.Mocker(myElement, myStages);
 m.className = 'myClassName';
 ```
 
-Using the example above we expect that for the second stage it will set the element class attribute to `class="myClassName1 myClassName2"`.
+Using the example above we expect that for the second stage it will set the element class attribute to `myClassName1 myClassName2`.
 
 ### Run Functions (DOM)
 
@@ -105,6 +105,7 @@ function updateLabels(revert, state) {
 
 Each function receives two arguments.
 
-||Param||Type||Description||
-|revert|Boolean|True if function should reverse (Stage is moving back)|
-|state|Object|An object stored inside the Mocker|
+Param | Type | Description
+--- | --- | ---
+revert | Boolean | True if function should reverse (Stage is moving back)
+state | Object | An object stored inside the Mocker
