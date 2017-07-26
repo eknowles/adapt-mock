@@ -12,6 +12,28 @@ Rapid prototype existing HTML/CSS with the tools you already know. Adapt is a to
 
 Adapt allows you to step through the various stages when prototyping to help sell and ideas, radical changes or introducing new features.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Install](#install)
+- [Tutorial](#tutorial)
+  - [Concept](#concept)
+  - [Setup Adapt](#setup-adapt)
+  - [Prototyping (styling stages)](#prototyping-styling-stages)
+    - [Multiple Mockers](#multiple-mockers)
+  - [Run Functions (DOM)](#run-functions-dom)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Install
+
+Install with NPM/yarn
+
+```bash
+npm i adapt-mock
+```
+
 ## Tutorial
 
 You need some HTML/CSS to start with. You can build it yourself or export from a live browser.
