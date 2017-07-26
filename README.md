@@ -42,14 +42,14 @@ npm i adapt-mock
 Adapt allows you to step through the various stages when prototyping to help sell and ideas, radical changes or introducing new features.
 If you can hack CSS in Chrome Developer Tools, you can build a prototype with Adapt. Grab some HTML/CSS and add a class for each design change then use Arrow keys to step through each stage, you can quickly compare each stage in the browser or device in real time.
 
-### Module Types
+### Available Modules
 
 Adapt comes in four flavours, can be used directly in the browser via umd or extended for your own projects.
 
-- UMD (./umd/adapt.js)
-- ES5 (./lib/index.js)
-- ES6 (./lib-esm/index.js)
-- Flat ES6 (./lib-esm/index.js)
+- UMD (`./umd/adapt.js`)
+- ES5 (`./lib/index.js`)
+- ES6 (./lib-esm/index.js`)
+- Flat ES6 (`./lib-esm/index.js`)
 
 ### Stages
 
