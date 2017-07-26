@@ -1,12 +1,6 @@
-# Adapt
+# Adapt [![Build Status](https://travis-ci.org/eknowles/adapt-mock.svg?branch=master)](https://travis-ci.org/eknowles/adapt-mock) [![Coverage Status](https://coveralls.io/repos/github/eknowles/adapt-mock/badge.svg?branch=master)](https://coveralls.io/github/eknowles/adapt-mock?branch=master)
 
-[![Build Status](https://travis-ci.org/eknowles/adapt-mock.svg?branch=master)](https://travis-ci.org/eknowles/adapt-mock)
-[![Coverage Status](https://coveralls.io/repos/github/eknowles/adapt-mock/badge.svg?branch=master)](https://coveralls.io/github/eknowles/adapt-mock?branch=master)
-[![GitHub issues](https://img.shields.io/github/issues/eknowles/adapt-mock.svg?style=plastic)](https://github.com/eknowles/adapt-mock/issues)
-[![npm](https://img.shields.io/npm/dt/adapt-mock.svg?style=plastic)](https://www.npmjs.com/package/adapt-mock)
-[![npm](https://img.shields.io/npm/v/adapt-mock.svg?style=plastic)](https://www.npmjs.com/package/adapt-mock)
-
----
+[![NPM](https://nodei.co/npm/adapt-mock.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/adapt-mock/)
 
 Rapid prototype existing HTML/CSS with the tools you already know. Adapt is a tool to bridge the gap between design and dev, if you can hack css in chrome dev tools you can build a prototype with Adapt.
 
