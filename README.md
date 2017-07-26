@@ -2,49 +2,58 @@
 
 [![NPM](https://nodei.co/npm/adapt-mock.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/adapt-mock/)
 
-Rapid prototype existing HTML/CSS with the tools you already know. Adapt is a tool to bridge the gap between design and dev, if you can hack css in chrome dev tools you can build a prototype with Adapt.
-
-Adapt allows you to step through the various stages when prototyping to help sell and ideas, radical changes or introducing new features.
+Rapid prototype existing HTML/CSS with the tools you already know. Adapt is a tool to bridge the gap between design and development.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Install](#install)
-- [Tutorial](#tutorial)
-  - [Concept](#concept)
-  - [Setup Adapt](#setup-adapt)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Module Types](#module-types)
+  - [Stages](#stages)
   - [Prototyping (styling stages)](#prototyping-styling-stages)
     - [Multiple Mockers](#multiple-mockers)
   - [Run Functions (DOM)](#run-functions-dom)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Install
-
-Install with NPM/yarn
+## Installation
 
 ```bash
 npm i adapt-mock
 ```
 
-## Tutorial
+```html
+<head>
+  ...
 
-You need some HTML/CSS to start with. You can build it yourself or export from a live browser.
+  <!--Main Adapt Library-->
+  <script src="./node_modules/adapt/umd/adapt-mock.min.js"></script>
 
-### Concept
+  <!--Adapt Stages-->
+  <link href="example/styles.css" rel="stylesheet">
+  <script src="example/scripts.js"></script>
+</head>
+```
 
-List out what you want to achieve with the prototype. Think of these as requirements.
+## Usage
 
-* Improve visibility between label and values
-* Improve information hierarchy
-* Improve contrast
+Adapt allows you to step through the various stages when prototyping to help sell and ideas, radical changes or introducing new features.
+If you can hack CSS in Chrome Developer Tools, you can build a prototype with Adapt. Grab some HTML/CSS and add a class for each design change then use Arrow keys to step through each stage, you can quickly compare each stage in the browser or device in real time.
 
-### Setup Adapt
+### Module Types
 
-You will need two files to work with, a JavaScript file that contains your Stages, and a CSS file which has your classes.
+Adapt comes in four flavours, can be used directly in the browser via umd or extended for your own projects.
 
-Put these into an Array of 'Stages'.
+- UMD (./umd/adapt.js)
+- ES5 (./lib/index.js)
+- ES6 (./lib-esm/index.js)
+- Flat ES6 (./lib-esm/index.js)
+
+### Stages
+
+Adapt requires a list of `Stages`, imagine these as a list of requirements. Each stage can have a description and functions to run when switching to it.
 
 ```javascript
 // Setup stages
@@ -65,21 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mock = new Adapt.Mocker(document.body, stages);
 
 });
-```
-
-Finally in your HTML insert these files into the HEAD element.
-
-```html
-<head>
-  ...
-
-  <!--Main AdaptJS File-->
-  <script src="adapt-mock.min.js"></script>
-
-  <!--Mock Files-->
-  <link href="example/styles.css" rel="stylesheet">
-  <script src="example/scripts.js"></script>
-</head>
 ```
 
 ### Prototyping (styling stages)
