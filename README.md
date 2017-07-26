@@ -10,7 +10,7 @@ Rapid prototype existing HTML/CSS with the tools you already know. Adapt is a to
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Module Types](#module-types)
+  - [Available Modules](#available-modules)
   - [Stages](#stages)
   - [Prototyping (styling stages)](#prototyping-styling-stages)
     - [Multiple Mockers](#multiple-mockers)
