@@ -61,7 +61,7 @@ Adapt comes in four flavours, can be used directly in the browser via umd or ext
 
 - UMD (`./umd/adapt.js`)
 - ES5 (`./lib/index.js`)
-- ES6 (./lib-esm/index.js`)
+- ES6 (`./lib-esm/index.js`)
 - Flat ES6 (`./lib-esm/index.js`)
 
 ### Stages
