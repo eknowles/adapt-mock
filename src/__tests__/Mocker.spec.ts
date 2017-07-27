@@ -42,11 +42,13 @@ describe('Mocker', () => {
   describe('property stages', () => {
     it('should return stages', function() {
       const getStages = mock.stages;
+
       expect(getStages).toBe(stages);
     });
 
     it('should set stages and call init', function() {
       const fakeStages = [{description: ''}];
+
       jest.spyOn(mock, 'init');
       mock.stages = fakeStages;
       expect(mock.init).toHaveBeenCalledTimes(1);
@@ -128,12 +130,14 @@ describe('Mocker', () => {
 
     it('should increase the stage by the given number', () => {
       const goTo = 5;
+
       expect(mock.moveStage(goTo)).toBe(goTo);
       expect(mock.active).toBe(goTo);
     });
 
     it('should not set a stage out of range', () => {
       const goTo = 100;
+
       expect(mock.moveStage(goTo)).toBe(false);
       expect(mock.active).toBe(startStageIndex);
     });
@@ -142,6 +146,7 @@ describe('Mocker', () => {
   describe('method classString', () => {
     it('should return a class name', function() {
       const result = `${mock.className}${totalStages + 1}`;
+
       expect(mock.classString('', totalStages, Array(totalStages))).toBe(result);
     });
   });
@@ -155,14 +160,34 @@ describe('Mocker', () => {
 
     it('should got the next stage when pressing the ArrowRight key', function() {
       const event = {key: 'ArrowRight'} as KeyboardEvent;
+
       mock.handleKeyPress(event);
       expect(mock.moveStage).toHaveBeenCalledWith(1);
     });
 
     it('should got the previous stage when pressing the ArrowLeft key', function() {
       const event = {key: 'ArrowLeft'} as KeyboardEvent;
+
       mock.handleKeyPress(event);
       expect(mock.moveStage).toHaveBeenCalledWith(-1);
+    });
+
+    it('should go to the first stage when pressing SHIFT + ArrowLeft', function() {
+      const event = {key: 'ArrowLeft', shiftKey: true} as KeyboardEvent;
+
+      mock.active = 5;
+      mock.handleKeyPress(event);
+      expect(mock.moveStage).not.toHaveBeenCalled();
+      expect(mock.active).toBe(0);
+    });
+
+    it('should go the last stage when pressing SHIFT + ArrowRight', function() {
+      const event = {key: 'ArrowRight', shiftKey: true} as KeyboardEvent;
+
+      mock.active = 5;
+      mock.handleKeyPress(event);
+      expect(mock.moveStage).not.toHaveBeenCalled();
+      expect(mock.active).toBe(totalStages);
     });
   });
 });

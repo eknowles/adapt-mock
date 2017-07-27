@@ -84,11 +84,12 @@ export class Mocker {
 
   private handleKeyPress(event: KeyboardEvent) {
     const keyName = event.key;
+    const shift = event.shiftKey;
 
     if (keyName === this.nextKey) {
-      return this.moveStage(1);
+      return shift ? this.active = (this.stages.length - 1) : this.moveStage(1);
     } else if (keyName === this.prevKey) {
-      return this.moveStage(-1);
+      return shift ? this.active = 0 : this.moveStage(-1);
     }
   }
 }

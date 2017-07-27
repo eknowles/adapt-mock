@@ -10,6 +10,7 @@ Rapid prototype existing HTML/CSS with the tools you already know. Adapt is a to
 
 - [Installation](#installation)
 - [Usage](#usage)
+  - [Moving Stages](#moving-stages)
   - [Available Modules](#available-modules)
   - [Stages](#stages)
   - [Prototyping (styling stages)](#prototyping-styling-stages)
@@ -41,6 +42,18 @@ npm i adapt-mock
 
 Adapt allows you to step through the various stages when prototyping to help sell and ideas, radical changes or introducing new features.
 If you can hack CSS in Chrome Developer Tools, you can build a prototype with Adapt. Grab some HTML/CSS and add a class for each design change then use Arrow keys to step through each stage, you can quickly compare each stage in the browser or device in real time.
+
+### Moving Stages
+
+You can move between stages with keyboard actions, remember the element that has the Mocker assigned should be in focus.
+
+Key Press|Action
+--- | ---
+ArrowRight | Go to next stage
+Shift + ArrowRight | Go to last stage
+ArrowLeft | Go to previous stage
+Shift + ArrowLeft | Go to first stage
+
 
 ### Available Modules
 
