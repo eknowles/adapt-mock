@@ -119,7 +119,8 @@ const stages = [
 ];
 ```
 
-Declare the function somewhere inside the
+Declare the function on the window.
+
 ```javascript
 function updateLabels(revert, state) {
   // Use whatever JavaScript you like here (e.g. JQuery)
